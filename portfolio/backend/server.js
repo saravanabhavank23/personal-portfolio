@@ -56,18 +56,15 @@ app.use((req, res) => {
 
 module.exports = app;
 
-async function startServer() {
-	try {
-		await connectDatabase();
-		app.listen(port, () => {
-			console.log(`Backend server running on http://localhost:${port}`);
-		});
-	} catch (error) {
-		console.error('Server startup failed:', error.message);
-		process.exit(1);
-	}
-}
+// Always connect to the database, whether running locally or on Vercel
+connectDatabase().catch((error) => {
+	console.error('Database connection failed:', error.message);
+});
 
+// Only start a traditional listening server when running locally.
+// On Vercel, the platform handles incoming requests automatically.
 if (process.env.VERCEL !== '1') {
-	startServer();
+	app.listen(port, () => {
+		console.log(`Backend server running on http://localhost:${port}`);
+	});
 }
