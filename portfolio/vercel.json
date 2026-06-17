@@ -32,6 +32,18 @@
       "dest": "/frontend/contact.html"
     },
     {
+      "src": "/style.css",
+      "dest": "/frontend/style.css"
+    },
+    {
+      "src": "/script.js",
+      "dest": "/frontend/script.js"
+    },
+    {
+      "src": "/(.*\\.(css|js|png|jpg|jpeg|gif|ico|svg|woff|woff2|ttf))",
+      "dest": "/frontend/$1"
+    },
+    {
       "src": "/(.*)",
       "dest": "/frontend/$1"
     }
