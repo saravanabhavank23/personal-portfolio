@@ -16,36 +16,8 @@
       "dest": "backend/server.js"
     },
     {
-      "src": "/",
-      "dest": "/frontend/index.html"
-    },
-    {
-      "src": "/about",
-      "dest": "/frontend/about.html"
-    },
-    {
-      "src": "/projects",
-      "dest": "/frontend/projects.html"
-    },
-    {
-      "src": "/contact",
-      "dest": "/frontend/contact.html"
-    },
-    {
-      "src": "/style.css",
-      "dest": "/frontend/style.css"
-    },
-    {
-      "src": "/script.js",
-      "dest": "/frontend/script.js"
-    },
-    {
-      "src": "/(.*\\.(css|js|png|jpg|jpeg|gif|ico|svg|woff|woff2|ttf))",
-      "dest": "/frontend/$1"
-    },
-    {
       "src": "/(.*)",
-      "dest": "/frontend/$1"
+      "dest": "frontend/$1"
     }
   ]
 }
